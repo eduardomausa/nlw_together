@@ -9,6 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 import { ButtonIcon } from '../../components/ButtonIcon';
 import IllustrationImg from '../../assets/illustration.png';
 import { styles } from './styles';
+import { LinearGradient } from 'react-native-svg';
 
 
 export function SignIn() {
@@ -19,6 +20,7 @@ export function SignIn() {
   }
 
   return (
+
     <View style={styles.container}>
 
       <Image
