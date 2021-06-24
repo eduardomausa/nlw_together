@@ -12,8 +12,6 @@ import { styles } from './styles';
 import { ButtonIcon } from '../../components/ButtonIcon';
 import { Background } from '../../components/Background';
 
-
-
 export function SignIn() {
   const navigation = useNavigation();
 
@@ -24,7 +22,6 @@ export function SignIn() {
   return (
     <Background>
       <View style={styles.container}>
-
         <Image
           source={IllustrationImg}
           style={styles.image}
