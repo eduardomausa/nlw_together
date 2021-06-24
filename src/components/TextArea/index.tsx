@@ -6,7 +6,7 @@ import { styles } from './styles';
 
 export function TextArea({ ...rest }: TextInputProps) {
   return (
-    <TextArea
+    <TextInput
       style={styles.container}
       {...rest}
     />
