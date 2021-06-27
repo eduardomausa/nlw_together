@@ -1,15 +1,35 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { Image, View } from 'react-native';
+import { CDN_IMAGE } from '../../config';
 
 import { styles } from './styles';
+import DiscordSvg from '../../assets/discord.svg';
 
-export function GuildIcon({ data, ...rest }: Props) {
-  const uri = 'https://w7.pngwing.com/pngs/842/992/png-transparent-discord-computer-servers-teamspeak-discord-icon-video-game-smiley-online-chat-thumbnail.png'
+//const { CDN_IMAGE } = process.env;
+
+type Props = {
+  guildId: string;
+  iconId: string | null;
+}
+
+export function GuildIcon({ guildId, iconId }: Props) {
+  const uri = `${CDN_IMAGE}/icons/${guildId}/${iconId}.png`;
 
   return (
-    <Image source={{ uri }}
-      style={styles.image}
-      resizeMode="cover"
-    />
+    <View style={styles.container}>
+      {
+        iconId ?
+          <Image
+            source={{ uri }}
+            style={styles.image}
+            resizeMode="cover"
+          />
+          :
+          <DiscordSvg
+            width={40}
+            height={40}
+          />
+      }
+    </View>
   );
 }
